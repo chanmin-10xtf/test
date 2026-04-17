@@ -1,0 +1,40 @@
+name: Agent Task
+description: 에이전트가 자동으로 처리할 태스크
+labels: ["agent:enabled"]
+assignees: ["chanmin-10xtf"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: 요구사항 요약
+      placeholder: 한 문장으로 무엇을 해야 하는지 작성해주세요
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 상세 내용
+      placeholder: |
+        구현해야 할 내용을 구체적으로 설명해주세요.
+        어떤 파일, 어떤 함수, 어떤 동작인지 포함하면 좋습니다.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 완료 기준 (Acceptance Criteria)
+      placeholder: |
+        - 어떤 입력에 어떤 결과가 나와야 하는지
+        - 테스트 케이스가 있다면 작성
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: 참고사항 (선택)
+      placeholder: 관련 파일 경로, 참고 링크, 주의사항 등
+    validations:
+      required: false
